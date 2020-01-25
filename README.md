@@ -1,4 +1,4 @@
-# CS5590 Python Deep Learning Spring 2020
+# CS5590 Python Deep Learning - Spring 2020
 
 ## Module 1 - Python & Deep Learning
 

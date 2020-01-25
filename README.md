@@ -4,4 +4,4 @@
 
 ### In Class Programming - (By Anurag Thantharate)
 
-[ICP1 - Python Basics 1](https://github.com/adtmv7/CS5590-490-Python-Deep-Learning/tree/master/ICP1) 
+* [ICP1 - Python Basics 1](https://github.com/adtmv7/CS5590-490-Python-Deep-Learning/tree/master/ICP1) 

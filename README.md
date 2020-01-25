@@ -1,6 +1,6 @@
 # CS5590 Python Deep Learning Spring 2020
 
-## Module 1 - Python & Machine Learning
+## Module 1 - Python & Deep Learning
 
 ### In Class Programming - (Anurag Thantharate, Class ID 24)
 

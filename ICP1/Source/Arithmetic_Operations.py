@@ -1,0 +1,12 @@
+x= 10
+y= 20
+print('x+y=', x+y) #Addition
+print('x*y=',x*y) #Multiplication
+print('x/y=',x/y) #Division smaller over bigger
+print('y/x=',y/x) #Division bigger over smaller
+print('x-y=',x-y) #Substraction
+print('y-x=',y-x) #Substraction
+print('x**y=',x**y) #Exponent
+print('y**x=',y**x) #Exponent
+print('x//y=',x//y) #Floor Division
+print('y//x=',y//x) #Floor Division

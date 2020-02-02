@@ -1,0 +1,4 @@
+C:\ProgramData\Anaconda3\python.exe "C:/Users/ld630534/Documents/Anurag Projects/Spring 2020/Python with DL/ICP2/wordcount.py"
+{'Python': 1, 'Course': 2, 'Deep': 1, 'Learning': 1, "{'Python':": 1, '1,': 2, "'Course':": 1, '2,': 1, "'Deep':": 1, "'Learning':": 1, '1}': 1}
+
+Process finished with exit code 0

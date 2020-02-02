@@ -1,0 +1,10 @@
+C:\ProgramData\Anaconda3\python.exe "C:/Users/ld630534/Documents/Anurag Projects/Spring 2020/Python with DL/ICP2/lbstokgs.py"
+Enter the number of Students = 5
+Enter weight in Lbs = 5
+Enter weight in Lbs = 10
+Enter weight in Lbs = 15
+Enter weight in Lbs = 20
+Enter weight in Lbs = 25
+[2.26796, 4.53592, 6.8038799999999995, 9.07184, 11.3398]
+
+Process finished with exit code 0

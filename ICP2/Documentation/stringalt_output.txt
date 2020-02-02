@@ -1,0 +1,5 @@
+C:\ProgramData\Anaconda3\python.exe "C:/Users/ld630534/Documents/Anurag Projects/Spring 2020/Python with DL/ICP2/stringalt.py"
+Enter String = ICP_Lab_2_Problem_2
+ C_a__rbe_
+
+Process finished with exit code 0

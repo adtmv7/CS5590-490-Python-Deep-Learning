@@ -14,3 +14,8 @@
 * [ICP4 - Python Basics Lecture 4](https://github.com/adtmv7/CS5590-490-Python-Deep-Learning/tree/master/ICP4)
 
 * [ICP5 - Python Basics Lecture 5](https://github.com/adtmv7/CS5590-490-Python-Deep-Learning/tree/master/ICP5)
+
+* [ICP5 - Python Basics Lecture 6](https://github.com/adtmv7/CS5590-490-Python-Deep-Learning/tree/master/ICP6)
+
+* [ICP5 - Python Basics Lecture 7](https://github.com/adtmv7/CS5590-490-Python-Deep-Learning/tree/master/ICP7)
+

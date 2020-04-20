@@ -37,8 +37,8 @@ X_test = X_test / 255.0
 y_train = np_utils.to_categorical(y_train)
 y_test = np_utils.to_categorical(y_test)
 num_classes = y_test.shape[1]
-type(y_test)
 
+#Create the model
 
 model = Sequential()
 model.add(Conv2D(32, (3, 3), input_shape=(32, 32, 3), padding='same', activation='relu', kernel_constraint=maxnorm(3)))
@@ -72,34 +72,43 @@ model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy
 print(model.summary())
 
 #Fit the model
-model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=5, batch_size=128)
+model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=10, batch_size=128)
 
 # Final evaluation of the model
 scores = model.evaluate(X_test, y_test, verbose=0)
 print("Accuracy: %.2f%%" % (scores[1]*100))
-print(X_test.shape)
-
 
 #Functional API
-
 from keras.models import Model
 from keras.layers import Input
-api_input=Input(shape=X_train.shape[1:])
-apimodel=Conv2D(32,(3,3),input_shape=(X_train.shape[1:]),padding="same",activation='relu')(api_input)
-apimodel=Dropout(0.2)(apimodel)
-apimodel=Conv2D(256, (3, 3), activation='relu', padding='same')(apimodel)
-apimodel=Dropout(0.2)(apimodel)
-apimodel=Conv2D(256, (3, 3), activation='relu', padding='same')(apimodel)
-apimodel=(Dropout(0.2))(apimodel)
-apimodel=Conv2D(256, (3, 3), activation='relu', padding='same')(apimodel)
-apimodel=MaxPooling2D(pool_size=(2, 2))(apimodel)
-apimodel=Dropout(0.5)(apimodel)
-apimodel=Flatten()(apimodel)
-apimodel=Dense(512, activation='relu',kernel_constraint=maxnorm(3))(apimodel)
-apimodel=Dense(10, activation='softmax')(apimodel)
 
-KERASX = Model(input=api_input,output=apimodel)
+a = Input(shape=(32,32,3))
+x=Conv2D(32,(3,3),padding="same",activation='relu')(a)
+x=Dropout(0.2)(x)
+x=Conv2D(256, (3, 3), activation='relu', padding='same')(x)
+x=MaxPooling2D(pool_size=(2, 2))(x)
+x=Dropout(0.5)(x)
+x=Flatten()(x)
+x=Dense(512, activation='relu', kernel_constraint=maxnorm(3))(x)
+x=Dropout(0.3)(x)
+x=Dense(num_classes, activation='softmax')(x)
+modelapi = Model(inputs=a,output=x)
 
-KERASX.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
+epochs = 10
+lrate = 0.001
+decay = lrate/epochs
+sgd = Adam(lr=lrate)
+modelapi.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
+modelapi.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=10, batch_size=128)
 
-KERASX.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=5, batch_size=128)
+# Predicting the first four images of dataset
+image=model.predict_classes(X_train[[1],:])
+print(image[0])
+
+predicted_image=y_test
+import matplotlib.pyplot as plt
+for i in range(2,6):
+  plt.imshow(X_test[i,:,:])  
+  plt.show()
+  image=model.predict_classes(X_test[[i],:])
+  print("actual",predicted_image[i],"predicted",image[0])
